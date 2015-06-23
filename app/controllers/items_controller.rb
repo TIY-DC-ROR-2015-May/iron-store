@@ -13,11 +13,12 @@ class ItemsController < ApplicationController
   end
 
   def create
+    item_params = params[:item]
     @item = Item.new(
-      title: params[:title],
-      description: params[:description],
-      price_in_cents: params[:price].to_f * 100,
-      quantity_available: params[:quantity_available]
+      title: item_params[:title],
+      description: item_params[:description],
+      price_in_cents: item_params[:price_in_cents],
+      quantity_available: item_params[:quantity_available]
     )
     if @item.save
       # redirect_to i

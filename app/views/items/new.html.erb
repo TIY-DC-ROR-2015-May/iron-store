@@ -5,12 +5,10 @@
 <% end %>
 
 <!-- <form method="POST" action="<%= items_path %>"> -->
-<%= form_tag items_path do %>
-  <label> Title
-    <input type="text" name="title" value="<%= @item.title %>">
-  </label>
-  <input type="text" name="description" placeholder="Description" value="<%= @item.description %>">
-  <input name="price" placeholder="Price" value="<%= @item.display_price %>">
-  <input type="number" name="quantity_available" placeholder="Quantity" value="<%= @item.quantity_available %>">
+<%= form_for @item do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_area :description %>
+  <%= f.number_field :price_in_cents %>
+  <%= f.number_field :quantity_available %>
   <button>Save</button>
 <% end %>
