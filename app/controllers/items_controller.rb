@@ -12,13 +12,18 @@ class ItemsController < ApplicationController
   end
 
   def create
-    i = Item.create!(
+    @item = Item.new(
       title: params[:title],
       description: params[:description],
       price_in_cents: params[:price].to_f * 100,
       quantity_available: params[:quantity_available]
     )
-    # redirect_to i
-    redirect_to item_path(i), notice: "Item created"
+    if @item.save
+      # redirect_to i
+      redirect_to item_path(@item), notice: "Item created"
+    else
+      # redisplay form with errors
+      render :new
+    end
   end
 end

@@ -1,12 +1,16 @@
 <h1>Create a new item</h1>
 
+<% if @item.errors %>
+  <p><strong>Error!</strong> <%= @item.errors.full_messages.to_sentence %></p>
+<% end %>
+
 <!-- <form method="POST" action="<%= items_path %>"> -->
 <%= form_tag items_path do %>
   <label> Title
-    <input type="text" name="title">
+    <input type="text" name="title" value="<%= @item.title %>">
   </label>
-  <input type="text" name="description" placeholder="Description">
-  <input name="price" placeholder="Price">
-  <input type="number" name="quantity_available" placeholder="Quantity">
+  <input type="text" name="description" placeholder="Description" value="<%= @item.description %>">
+  <input name="price" placeholder="Price" value="<%= @item.display_price %>">
+  <input type="number" name="quantity_available" placeholder="Quantity" value="<%= @item.quantity_available %>">
   <button>Save</button>
 <% end %>
