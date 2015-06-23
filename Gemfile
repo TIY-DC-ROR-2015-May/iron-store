@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem "twitter-bootstrap-rails"
+gem 'bootstrap_form', github: 'bootstrap-ruby/rails-bootstrap-forms'
 
 group :development, :test do
   gem 'quiet_assets'
