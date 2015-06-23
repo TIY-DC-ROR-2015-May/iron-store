@@ -1,6 +1,6 @@
 <h1>Create a new item</h1>
 
-<% if @item.errors %>
+<% if @item.errors.any? %>
   <p><strong>Error!</strong> <%= @item.errors.full_messages.to_sentence %></p>
 <% end %>
 

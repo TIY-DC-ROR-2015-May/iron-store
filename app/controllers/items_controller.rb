@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new price_in_cents: 200
   end
 
   def create
