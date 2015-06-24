@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
 
   def create
     item_params = params[:item]
-    @item = Item.new(
+    @item = current_user.items.new(
       title: item_params[:title],
       description: item_params[:description],
       price_in_cents: item_params[:price_in_cents],

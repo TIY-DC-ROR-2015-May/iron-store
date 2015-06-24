@@ -2,4 +2,7 @@
 
 <h1><%= @item.title %></h1>
 <h2><%= @item.quantity_available %> @ <%= @item.display_price %></h2>
+<% if @item.user %>
+  <h3><small>Sold by</small> <%= @item.user.email %></h3>
+<% end %>
 <p><%= @item.description %></p>
