@@ -18,6 +18,7 @@ gem 'bootstrap_form', github: 'bootstrap-ruby/rails-bootstrap-forms'
 gem 'devise'
 
 group :development, :test do
+  gem 'letter_opener'
   gem 'quiet_assets'
   gem 'better_errors'
   gem 'pry-rails'
