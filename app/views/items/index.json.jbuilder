@@ -1,0 +1,1 @@
+json.items @items, :title, :description, :created_at, :display_price
