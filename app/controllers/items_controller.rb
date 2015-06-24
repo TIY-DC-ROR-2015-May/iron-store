@@ -6,6 +6,16 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find params[:id]
+    # Option 1: JSON by hand
+    # respond_to do |format|
+    #   format.html
+    #   format.json do
+    #     render json: {
+    #       title: @item.title,
+    #       price: @item.display_price
+    #     }
+    #   end
+    # end
   end
 
   def new
