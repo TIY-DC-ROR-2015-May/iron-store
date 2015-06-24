@@ -1,3 +1,4 @@
+# Or json.array!
 json.items @items do |item|
   # json.title item.title
   # json.description item.description
